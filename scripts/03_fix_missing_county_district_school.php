@@ -26,18 +26,7 @@ foreach($isEmpty as $cds_code=>$emptySet)
   if(isset($notEmpty[$cds_code]))
   {
     $info = $notEmpty[$cds_code];
-    $update = "UPDATE EnrollmentRawData SET COUNTY = '" . addslashes($info['COUNTY']) . "', DISTRICT = '" . addslashes($info['DISTRICT']) . "', SCHOOL = '" . addslashes($info['SCHOOL']) ."' WHERE CDS_CODE = '$cds_code' AND COUNTY = ''";
-    print $update."\n";
-
-/*
-    try
-    {
-      $conn->query($update);
-    }
-    catch (Exception $e) {
-      print 'Caught exception: ' .  $e->getMessage() . "\n";
-    }
-*/
+    $success = $RawDataService->updateRowsWithEmptyValues($cds_code, $info);
   }
   else
   {
