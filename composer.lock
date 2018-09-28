@@ -65,16 +65,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.21",
+            "version": "3.67.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "701152ff155ad7ea3fe64d264a0fbf4e26f4e3a4"
+                "reference": "0d05816beeaf187a3897c28aaa68d683974818d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/701152ff155ad7ea3fe64d264a0fbf4e26f4e3a4",
-                "reference": "701152ff155ad7ea3fe64d264a0fbf4e26f4e3a4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0d05816beeaf187a3897c28aaa68d683974818d9",
+                "reference": "0d05816beeaf187a3897c28aaa68d683974818d9",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-27T19:41:06+00:00"
+            "time": "2018-09-28T18:46:40+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -481,12 +481,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "9355a2badac12ead9ed581166c18e4ea07117679"
+                "reference": "37908510edb41fd1d24be71f23ee4581ad12be7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/9355a2badac12ead9ed581166c18e4ea07117679",
-                "reference": "9355a2badac12ead9ed581166c18e4ea07117679",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/37908510edb41fd1d24be71f23ee4581ad12be7f",
+                "reference": "37908510edb41fd1d24be71f23ee4581ad12be7f",
                 "shasum": ""
             },
             "require": {
@@ -496,7 +496,7 @@
                 "php": "^7.1"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^4.0",
+                "doctrine/coding-standard": "^5.0",
                 "jetbrains/phpstorm-stubs": "^2018.1.2",
                 "phpstan/phpstan": "^0.10.1",
                 "phpunit/phpunit": "^7.1.2",
@@ -556,7 +556,7 @@
                 "php",
                 "queryobject"
             ],
-            "time": "2018-09-27 23:17:22"
+            "time": "2018-09-28 18:49:47"
         },
         {
             "name": "doctrine/event-manager",
@@ -1398,12 +1398,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/king-consulting/enrollment-orm.git",
-                "reference": "4ae1a99689102629ff59199b3886c8b300e0307b"
+                "reference": "d9b98c420d48aa894b04fdba62e9d0ea8f2f10b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/king-consulting/enrollment-orm/zipball/4ae1a99689102629ff59199b3886c8b300e0307b",
-                "reference": "4ae1a99689102629ff59199b3886c8b300e0307b",
+                "url": "https://api.github.com/repos/king-consulting/enrollment-orm/zipball/d9b98c420d48aa894b04fdba62e9d0ea8f2f10b6",
+                "reference": "d9b98c420d48aa894b04fdba62e9d0ea8f2f10b6",
                 "shasum": ""
             },
             "require": {
@@ -1433,7 +1433,7 @@
                 "source": "https://github.com/king-consulting/enrollment-orm/tree/master",
                 "issues": "https://github.com/king-consulting/enrollment-orm/issues"
             },
-            "time": "2018-09-27 23:28:13"
+            "time": "2018-09-28 22:06:50"
         },
         {
             "name": "league/container",
@@ -3212,12 +3212,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "60b8afa374ea1f62f66537a7530c755a16f8da0f"
+                "reference": "be6564ea49b96b9776c53f627a49683ec2687ce5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60b8afa374ea1f62f66537a7530c755a16f8da0f",
-                "reference": "60b8afa374ea1f62f66537a7530c755a16f8da0f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be6564ea49b96b9776c53f627a49683ec2687ce5",
+                "reference": "be6564ea49b96b9776c53f627a49683ec2687ce5",
                 "shasum": ""
             },
             "require": {
@@ -3288,7 +3288,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-27T19:35:05+00:00"
+            "time": "2018-09-28T20:05:46+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

@@ -33,7 +33,6 @@
     "symfony/yaml": "^4.1"
   },
   "suggest": {
-    "ext-redis": "For caching Doctrine proxies",
-    "ext-ldap": "To allow users to authenticate with LDAP"
+    "ext-redis": "For caching Doctrine proxies"
   }
 }
