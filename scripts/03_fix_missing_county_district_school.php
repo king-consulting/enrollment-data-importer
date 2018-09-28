@@ -1,56 +1,35 @@
 <?php
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+require_once(__DIR__ . '/../bootstrap.php');
 
-$conn = new mysqli("localhost", "root", '&$#$JFl23asfjA)8wfLFr29&^', "CaliforniaEnrollment");
-if ($conn->connect_errno) {
-  echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
-}
+#NOT EMPTY ROWS
+$notEmptyResults = $RawDataService->findRowsWithNoEmptyValues();
+$notEmpty = [];
 
-#NOT NULL ROWS
-$sql = 'SELECT DISTINCT CDS_CODE, COUNTY, DISTRICT, SCHOOL FROM EnrollmentRawData WHERE COUNTY IS NOT NULL';
-
-$notNull = [];
-
-try
+foreach($notEmptyResults as $row)
 {
-  $res = $conn->query($sql);
-  $results = $res->fetch_all(MYSQLI_ASSOC);
-  foreach($results as $row)
-  {
-    $notNull[$row['CDS_CODE']] = $row;
-  }
-}
-catch (Exception $e) {
-  print 'Caught exception: ' .  $e->getMessage() . "\n";
+  $notEmpty[$row['CDS_CODE']] = $row;
 }
 
-# NULL ROWS
-$sql = 'SELECT DISTINCT CDS_CODE, COUNTY, DISTRICT, SCHOOL FROM EnrollmentRawData WHERE COUNTY IS NULL';
+# EMPTY ROWS
+$emptyResults = $RawDataService->findRowsWithEmptyValues();
+$isEmpty = [];
 
-$isNull = [];
-
-try
+foreach($emptyResults as $row)
 {
-  $res = $conn->query($sql);
-  $results = $res->fetch_all(MYSQLI_ASSOC);
-  foreach($results as $row)
-  {
-    $isNull[$row['CDS_CODE']] = $row;
-  }
-}
-catch (Exception $e) {
-  print 'Caught exception: ' .  $e->getMessage() . "\n";
+  $isEmpty[$row['CDS_CODE']] = $row;
 }
 
 # INSERT
-foreach($isNull as $cds_code=>$emptySet)
+foreach($isEmpty as $cds_code=>$emptySet)
 {
-  if(isset($notNull[$cds_code]))
+  if(isset($notEmpty[$cds_code]))
   {
-    $info = $notNull[$cds_code];
-    $update = "UPDATE EnrollmentRawData SET COUNTY = '" . addslashes($info['COUNTY']) . "', DISTRICT = '" . addslashes($info['DISTRICT']) . "', SCHOOL = '" . addslashes($info['SCHOOL']) ."' WHERE CDS_CODE = '$cds_code' AND COUNTY IS NULL";
+    $info = $notEmpty[$cds_code];
+    $update = "UPDATE EnrollmentRawData SET COUNTY = '" . addslashes($info['COUNTY']) . "', DISTRICT = '" . addslashes($info['DISTRICT']) . "', SCHOOL = '" . addslashes($info['SCHOOL']) ."' WHERE CDS_CODE = '$cds_code' AND COUNTY = ''";
+    print $update."\n";
 
+/*
     try
     {
       $conn->query($update);
@@ -58,11 +37,12 @@ foreach($isNull as $cds_code=>$emptySet)
     catch (Exception $e) {
       print 'Caught exception: ' .  $e->getMessage() . "\n";
     }
-
+*/
   }
   else
   {
     print "DOES NOT EXIST!!! $cds_code\n";
   }
+
 }
 
